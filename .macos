@@ -906,10 +906,8 @@ printf "TODO:\n\
 install: \n\
   battery indicator (App Store) \n\
   Gifski (App Store) \n\
-  Runcat (App Store) \n\
-  Todoist (App Store) \n\
   Webcam Settings (App Store) \n\
-  Audacity (https://www.audacityteam.org/download/) \n\
+  Things 3 (App Store) \n\
 \n\
 Restart Terminal.app\n\
 copy git config from your backup/re-login \n\
