@@ -43,7 +43,7 @@ echo "brew installing stuff"
 # bat: A cat(1) clone with syntax highlighting and Git integration.
 # switchaudio-osx: allows me to switch the audio device via the command line
 brew install git hub libdvdcss ripgrep watchman tree bat \
-switchaudio-osx
+switchaudio-osx zsh 
 
 echo "installing node (via n-install)"
 curl -L https://git.io/n-install | bash
@@ -60,15 +60,41 @@ brew cask install alfred google-chrome firefox brave-browser bettertouchtool div
 bartender google-drive-file-stream itsycal visual-studio-code 1password dash \
 workflowy vlc discord obs handbrake zoomus betterzip avibrazil-rdm sip \
 qlcolorcode qlmarkdown qlstephen quicklook-json webpquicklook \
-suspicious-package qlvideo spotify focus qmoji slack
+suspicious-package qlvideo spotify focus qmoji slack iterm2
 
-echo "Generating an RSA token for GitHub"
-mkdir -p ~/.ssh
-touch ~/.ssh/config
-ssh-keygen -t rsa -b 4096 -C "tim+github@foster.host"
-echo "Host *\n AddKeysToAgent yes\n UseKeychain yes\n IdentityFile ~/.ssh/id_rsa" | tee ~/.ssh/config
-eval "$(ssh-agent -s)"
-echo "run 'pbcopy < ~/.ssh/id_rsa.pub' and paste that into GitHub"
+
+echo "Checking for existing ssh config"
+SSHFILE=~/.ssh/config
+if [ ! -f "$SSHFILE" ]; then
+  echo "$SSHFILE does not exist"
+  echo "Generating an RSA token for GitHub"
+  mkdir -p ~/.ssh
+  touch ~/.ssh/config
+  ssh-keygen -t rsa -b 4096 -C "tim+github@foster.host"
+  echo "Host *\n \tIgnoreUnknown AddKeysToAgent,UseKeychain\n \tAddKeysToAgent yes\n \tUseKeychain yes\n \tIdentityFile ~/.ssh/id_rsa" | tee ~/.ssh/config
+  eval "$(ssh-agent -s)"
+  echo "run 'pbcopy < ~/.ssh/id_rsa.pub' and paste that into GitHub"
+fi
+
+
+
+#######################
+# Manual macos steps  #
+#######################
+
+# Fix the VScode terminal
+# Reference: https://medium.com/@hippojs.guo/vs-code-fix-fonts-in-terminal-761cc821ef41
+
+# Install Fira Code
+# Reference: https://github.com/tonsky/FiraCode/wiki/Installing
+# brew tap homebrew/cask-fonts
+# brew cask install font-fira-code
+# NOTE: ensure you use FiraCode-Retina
+# Note: if you don't use retina it will cause spacing to be jacked up when highlighting
+
+# Install Things3
+# https://culturedcode.com/things/
+
 
 #echo "cloning dotfiles"
 #git clone git@github.com:kentcdodds/dotfiles.git "${HOME}/dotfiles"
