@@ -48,6 +48,10 @@ switchaudio-osx zsh
 echo "installing node (via n-install)"
 curl -L https://git.io/n-install | bash
 
+# Note: May need to manuall updated .zshrc with this line
+# export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
+#
+
 echo "node --version: $(node --version)"
 echo "npm --version: $(npm --version)"
 
