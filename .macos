@@ -916,5 +916,6 @@ install: \n\
 Restart Terminal.app\n\
 copy git config from your backup/re-login \n\
 copy .npmrc from your backup/re-login \n\
+npm login to ensure we can access private repos\n\
 login to literally everything \n\
 "
