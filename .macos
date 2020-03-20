@@ -64,7 +64,7 @@ brew cask install alfred google-chrome firefox brave-browser bettertouchtool div
 bartender google-drive-file-stream itsycal visual-studio-code 1password dash \
 workflowy vlc discord obs handbrake zoomus betterzip avibrazil-rdm sip \
 qlcolorcode qlmarkdown qlstephen quicklook-json webpquicklook \
-suspicious-package qlvideo spotify focus qmoji slack iterm2
+suspicious-package qlvideo spotify focus qmoji slack iterm2 postman
 
 
 echo "Checking for existing ssh config"
