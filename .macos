@@ -919,3 +919,6 @@ copy .npmrc from your backup/re-login \n\
 npm login to ensure we can access private repos\n\
 login to literally everything \n\
 "
+
+# Alfred workflows:
+# http://www.packal.org/workflow/search-safari-and-chrome-tabs
